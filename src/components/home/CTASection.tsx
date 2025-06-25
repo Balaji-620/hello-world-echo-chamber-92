@@ -1,57 +1,81 @@
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export function CTASection() {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden bg-[#0F1026]">
-      {/* Removed gradient background elements */}
-
-      <div className="container relative mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="glass-card rounded-2xl p-8 md:p-12 backdrop-blur-md border border-white/10 shadow-xl">
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+    <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <div className="container mx-auto px-4 md:px-6">
+        <motion.div
+          className="max-w-4xl mx-auto text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Ready to Transform Your Career?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Start your AI-powered journey today and discover personalized pathways to professional success
+          </p>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <Button
+              size="lg"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => navigate("/ai-assessment")}
             >
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-balance text-primary">
-  Begin Your Learning Journey Today
-</h2>
-
-              <p className="text-lg text-foreground/70 mb-8 md:mb-10 text-balance max-w-2xl mx-auto">
-                Join thousands of students who are transforming their careers through our AI-powered platform and mentorship program.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button
-                  size="lg"
-                  className="w-full sm:w-auto bg-[#F57E20] hover:bg-[#e76c0f] text-white shadow-lg"
-                  onClick={() => navigate("/get-started")}
-                >
-                  Get Started for Free
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto bg-[#F57E20] hover:bg-[#e76c0f] text-white shadow-lg"
-                  onClick={() => navigate("/contact")}
-                >
-                  Schedule a Demo <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-
-              <p className="mt-6 text-sm text-foreground/60">
-                No credit card required. Start with our free plan and upgrade anytime.
-              </p>
-            </motion.div>
+              Begin Your Assessment
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg font-semibold rounded-lg"
+              onClick={() => navigate("/contact")}
+            >
+              Schedule Demo
+            </Button>
           </div>
-        </div>
+        </motion.div>
+        
+        <motion.div
+          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="bg-gradient-to-br from-cyan-100 to-blue-100 rounded-2xl p-8 text-center">
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">
+              Ready to Transform Your Journey?
+            </h3>
+            <p className="text-lg text-gray-700 mb-8">
+              Join thousands of learners, professionals, and organizations already growing with Gurukul Code
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={() => navigate("/get-started")}
+              >
+                Start Free Assessment
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-2 border-blue-300 text-blue-700 hover:bg-blue-50 px-8 py-4 text-lg font-semibold rounded-lg"
+                onClick={() => navigate("/contact")}
+              >
+                Book a Demo
+              </Button>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

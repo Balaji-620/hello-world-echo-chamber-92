@@ -1,21 +1,18 @@
 
 import { HeroSection } from "@/components/home/HeroSection";
-import { FeaturesSection } from "@/components/home/FeaturesSection";
-import { HowItWorksSection } from "@/components/home/HowItWorksSection";
-import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { PlatformsSection } from "@/components/home/PlatformsSection";
+import { WhoIsItForSection } from "@/components/home/WhoIsItForSection";
 import { CTASection } from "@/components/home/CTASection";
-import { VisionSection } from "@/components/home/VisionSection";
-import { CareerJourneySection } from "@/components/home/CareerJourneySection";
+import { InfrastructureSection } from "@/components/home/InfrastructureSection";
 
 const Index = () => {
   return (
     <>
       <HeroSection />
-      <HowItWorksSection />
-      <CareerJourneySection />
+      <PlatformsSection />
+      <WhoIsItForSection />
       <CTASection />
-      <TestimonialsSection />
-      
+      <InfrastructureSection />
     </>
   );
 };
